@@ -30,16 +30,16 @@ void cadastrarCarta(Carta *carta) {
 void compararCartas(Carta carta1, Carta carta2) {
     printf("\nComparação de Atributos:\n");
 
-    // Comparação de População
+    // Comparação de População da cidade
     printf("Vencedor (População): %s\n", (carta1.populacao > carta2.populacao) ? carta1.nome : carta2.nome);
     
-    // Comparação de Área
+    // Comparação de Área estimada
     printf("Vencedor (Área): %s\n", (carta1.area > carta2.area) ? carta1.nome : carta2.nome);
     
-    // Comparação de PIB
+    // Comparação de PIB geral
     printf("Vencedor (PIB): %s\n", (carta1.pib > carta2.pib) ? carta1.nome : carta2.nome);
     
-    // Comparação de Densidade Populacional
+    // Comparação de Densidade Populacional de acordo com sistema de cidades
     float densidade1 = (carta1.area > 0) ? (carta1.populacao / carta1.area) : 0;
     float densidade2 = (carta2.area > 0) ? (carta2.populacao / carta2.area) : 0;
     printf("Vencedor (Densidade Populacional): %s\n", (densidade1 < densidade2) ? carta1.nome : carta2.nome);
@@ -62,7 +62,7 @@ int main() {
     cadastrarCarta(&carta2);
     exibirCarta(carta2);
 
-    // Comparação das cartas
+
     compararCartas(carta1, carta2);
 
     return 0;
